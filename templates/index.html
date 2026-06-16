@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio pribadi - Computer Science Student & Intelligent Systems Enthusiast">
+    <title>Abdul Aziz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- {{ url_for('static', filename='style.css') }} -->
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">AA<span>.</span></a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home"         class="nav-link">Home</a></li>
+                <li><a href="#about"        class="nav-link">About</a></li>
+                <li><a href="#skills"       class="nav-link">Skills</a></li>
+                <li><a href="#projects"     class="nav-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact"      class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <!-- Text -->
+                <div class="hero-text">
+                    <p class="hero-eyebrow">👋 Hello, I'm</p>
+                    <h1 class="hero-name">Abdul Aziz</h1>
+                    <h2 class="hero-title">Computer Science Student</h2>
+                    <p class="hero-subtitle">Intelligent Systems Enthusiast</p>
+                    <p class="hero-description">
+                        Mahasiswa Computer Science di BINUS University dengan specialization Intelligent Systems. Memiliki minat yang luas di bidang teknologi, khususnya Software Development, Game Development, Machine Learning, Artificial Intelligence, serta berbagai teknologi baru yang terus berkembang. Senang mempelajari hal-hal yang belum pernah dicoba sebelumnya dan mengembangkan kemampuan melalui eksplorasi, eksperimen, serta pengerjaan proyek secara langsung.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Portfolio</a>
+                        <a href="#contact"  class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <div class="profile-accent profile-accent-ring"></div>
+                        <div class="profile-accent profile-accent-dot"></div>
+                        <div class="profile-img-wrapper">
+                            <div class="profile-placeholder" aria-hidden="true">YN</div>
+                            <img
+                                src="{{ url_for('static', filename='profile.jpeg') }}"
+                                alt="Profile Photo"
+                                class="profile-img"
+                                onerror="this.style.display='none'"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="hero-bg-blob hero-bg-blob-1" aria-hidden="true"></div>
+        <div class="hero-bg-blob hero-bg-blob-2" aria-hidden="true"></div>
+    </section>
+    <section class="section" id="about" data-reveal>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Get to know me</p>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-content">
+
+                <!-- About Text -->
+                <div class="about-text">
+                    <h3 class="about-heading">CS Student at BINUS University</h3>
+                    <p class="about-description">
+                        Saya adalah mahasiswa Computer Science dengan specialization Intelligent Systems di BINUS University. Bidang yang saya pelajari mencakup Artificial Intelligence, Machine Learning, Computer Vision, dan Natural Language Processing, dengan fokus pada pengembangan teknologi intelligent yang mampu menganalisis data, mengenali pola, dan mendukung proses pengambilan keputusan.
+                    </p>
+                    <p class="about-description">
+                        Di luar kegiatan akademik, saya memiliki ketertarikan yang luas terhadap dunia teknologi, termasuk Web Development, Reverse Engineering, dan Game Development. Saya senang mengeksplorasi teknologi baru, memahami bagaimana suatu sistem bekerja secara mendalam, serta mengembangkan berbagai proyek untuk meningkatkan kemampuan problem solving, analytical thinking, dan technical skills melalui pengalaman praktis dan continuous learning.
+                    </p>
+                    <div class="about-interests">
+                        <span class="interest-tag">🤖 Artificial Intelligence</span>
+                        <span class="interest-tag">📊 Machine Learning</span>
+                        <span class="interest-tag">👁️ Computer Vision</span>
+                        <span class="interest-tag">💬 Natural Language Processing</span>
+                        <span class="interest-tag">🧠 Intelligent Systems</span>
+                        <span class="interest-tag">🎮 Game Development</span>
+                        <span class="interest-tag">🔧 Reverse Engineering</span>
+                        <span class="interest-tag">🌐 Web Development</span>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="about-timeline">
+                    <h3 class="timeline-heading">Educational Journey</h3>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-date">2021 – 2024</div>
+                                <div class="timeline-school">SMK Farmako Medika Plus</div>
+                                <div class="timeline-detail">Jurusan: Teknologi Komputer dan jaringan</div>
+                                <p class="timeline-desc">
+                                    Mempelajari dasar-dasar Teknologi Komputer dan Jaringan, termasuk perangkat keras, sistem operasi, administrasi jaringan, serta troubleshooting untuk membangun fondasi di bidang teknologi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot timeline-dot-active"></div>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-date">2024 – 2028</div>
+                                <div class="timeline-school">BINUS University</div>
+                                <div class="timeline-degree">Bachelor of Computer Science (S1)</div>
+                                <div class="timeline-spec-wrap">
+                                    <span class="spec-badge">Intelligent Systems</span>
+                                </div>
+                                <p class="timeline-desc">
+                                    Menempuh pendidikan Computer Science dengan specialization Intelligent Systems yang mencakup Artificial Intelligence, Machine Learning, Computer Vision, Natural Language Processing, dan pengembangan intelligent systems untuk berbagai kebutuhan teknologi kedepannya.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="section section-alt" id="skills" data-reveal>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">What I work with</p>
+                <h2 class="section-title">Skills</h2>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card" data-stagger="0">
+                    <div class="skill-card-icon">⌨️</div>
+                    <h3 class="skill-card-title">Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C & C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-stagger="1">
+                    <div class="skill-card-icon">🧠</div>
+                    <h3 class="skill-card-title">AI & Intelligent Systems</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Natural Language Processing</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-stagger="2">
+                    <div class="skill-card-icon">🌐</div>
+                    <h3 class="skill-card-title">Software & Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Game Development</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-stagger="3">
+                    <div class="skill-card-icon">🛠️</div>
+                    <h3 class="skill-card-title">Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Visual Studio</span>
+                        <span class="skill-tag">Google Collab</span>
+                        <span class="skill-tag">Unity</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="section" id="projects" data-reveal>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">What I've built with My Team</p>
+                <h2 class="section-title">Projects &amp; Prototypes</h2>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card" data-stagger="0">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-placeholder" style="--ph-color: #2563eb;">
+                            <span class="project-img-label">AI</span>
+                        </div>
+                        <img
+                            src="{{ url_for('static', filename='project1.PNG') }}"
+                            alt="Project 1"
+                            class="project-img"
+                            onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-name">Malware Detection with ML</h3>
+                        <p class="project-desc">
+                            Sistem deteksi malware berbasis Machine Learning untuk menganalisis file Portable Executable seperti .exe dan .dll. Kami membuat proyek ini untuk mengatasi sistem deteksi malware yang berbasis signature yang sudah tidak efektif lagi karena banyaknya varian malware baru yang muncul. Dengan menggunakan dataset Ember, kami melatih model ML untuk mengenali pola dan karakteristik file yang mencurigakan, sehingga dapat mendeteksi malware dengan lebih akurat dan cepat.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://machinelearning-malware-detection-ember.onrender.com/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View Prototype</a>
+                            <a href="https://github.com/abbdool/MachineLearning-Malware_Detection-Ember-Dataset" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-stagger="1">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-placeholder" style="--ph-color: #7c3aed;">
+                            <span class="project-img-label">ML</span>
+                        </div>
+                        <img
+                            src="{{ url_for('static', filename='project2.PNG') }}"
+                            alt="Project 2"
+                            class="project-img"
+                            onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-name">Slang Detection with ML</h3>
+                        <p class="project-desc">
+                            Sistem yang mendeteksi apakah suatu kata termasuk slang atau bukan dalam Bahasa Inggris. Proyek ini dipilih karena banyaknya penggunaan slang di media sosial yang sering menjadi tantangan bagi sistem Natural Language Processing tradisional. Dengan menggabungkan beberapa dataset slang dari berbagai sumber, kami melatih model Logistic Regression untuk mengenali pola penggunaan slang dan membedakannya dari kata-kata formal, sehingga membantu meningkatkan kualitas pemrosesan teks pada data yang berasal dari platform digital dan media sosial.
+                        <div class="project-actions">
+                            <a href="https://slangdetection-correction-with-logistic.onrender.com/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View Prototype</a>
+                            <a href="https://github.com/abbdool/SlangDetection-Correction-with-Logistic-Regression" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-stagger="2">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-placeholder" style="--ph-color: #0891b2;">
+                            <span class="project-img-label">WEB</span>
+                        </div>
+                        <img
+                            src="{{ url_for('static', filename='project3.PNG') }}"
+                            alt="Project 3"
+                            class="project-img"
+                            onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-name">Text Corrector</h3>
+                        <p class="project-desc">
+                            Sistem koreksi teks bahasa Inggris berbasis NLP yang dikembangkan untuk mengatasi berbagai bentuk bahasa informal yang sering ditemukan di media sosial, seperti slang, singkatan, kontraksi, dan kesalahan penulisan. Dengan memanfaatkan NLTK, kamus slang dari berbagai sumber, serta algoritma spell correction, sistem mampu melakukan normalisasi dan koreksi teks secara otomatis sehingga meningkatkan kualitas data untuk berbagai kebutuhan pemrosesan bahasa alami.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://hybridtext-correction-nlp.onrender.com/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View Prototype</a>
+                            <a href="https://github.com/abbdool/HybridText-Correction-NLP" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-stagger="3">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-placeholder" style="--ph-color: #059669;">
+                            <span class="project-img-label">DATA</span>
+                        </div>
+                            <img
+                            src="{{ url_for('static', filename='project4.PNG') }}"
+                            alt="Project 4"
+                            class="project-img"
+                            onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-name">Virus Slayer: Pandemic Reborn</h3>
+                        <p class="project-desc">
+                            Game RPG bertema pertarungan melawan virus yang dirancang untuk meningkatkan kesadaran mengenai pentingnya kebersihan dan pencegahan penyakit menular. Proyek ini menggabungkan sistem leveling, battle otomatis, serta mekanik contamination dan cleaning equipment untuk menyampaikan pesan edukatif melalui gameplay yang interaktif dan menarik.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/abbdool/RPG_Game_SoftEng/releases/tag/v1.0-beta" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View Prototype</a>
+                            <a href="https://github.com/abbdool/RPG_Game_SoftEng" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-stagger="4">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-placeholder" style="--ph-color: #dc2626;">
+                            <span class="project-img-label">APP</span>
+                        </div>
+                            <img
+                            src="{{ url_for('static', filename='project5.PNG') }}"
+                            alt="Project 5"
+                            class="project-img"
+                            onerror="this.style.display='none'"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-name">Drowsiness Detection</h3>
+                        <p class="project-desc">
+                            Sistem deteksi kantuk berbasis Computer Vision yang dikembangkan untuk mengurangi risiko kecelakaan akibat kelelahan dan kurangnya fokus. Proyek ini menggunakan Dlib Facial Landmark Detection untuk mengekstraksi fitur wajah serta MobileNetV2 sebagai model klasifikasi kondisi mata terbuka dan tertutup. Dengan analisis video secara real-time, sistem mampu mendeteksi indikasi kantuk dan memberikan peringatan otomatis kepada pengguna.
+                        </p>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Under Development</a>
+                            <a href="https://github.com/abbdool/Drowsiness-Detection-with-MobileNetV2" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-alt" id="certificates" data-reveal>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Recognition &amp; Learning</p>
+                <h2 class="section-title">Certificates</h2>
+            </div>
+
+            <div class="certs-grid">
+
+                <div class="cert-card" data-stagger="0">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-body">
+                        <div class="cert-year">2026</div>
+                        <h3 class="cert-name">Azure AI Fundamentals Training</h3>
+                        <p class="cert-institution">GreatNusa</p>
+                        <p class="cert-description">
+                            Pelatihan mengenai dasar-dasar Artificial Intelligence pada platform Microsoft Azure, termasuk pengenalan layanan AI, machine learning, computer vision, natural language processing, serta implementasi solusi AI berbasis cloud.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-stagger="1">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-body">
+                        <div class="cert-year">2026</div>
+                        <h3 class="cert-name">Full Stack Web Developer Learning Path</h3>
+                        <p class="cert-institution">Dicoding Indonesia</p>
+                        <p class="cert-description">
+                            Program pembelajaran yang mencakup pengembangan aplikasi web dari sisi frontend dan backend, termasuk dasar pemrograman, web development, database, serta praktik pengembangan aplikasi berbasis web menggunakan berbagai teknologi modern.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-stagger="2">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-body">
+                        <div class="cert-year">2026</div>
+                        <h3 class="cert-name">Artificial Intelligence Learning Path</h3>
+                        <p class="cert-institution">Dicoding Indonesia</p>
+                        <p class="cert-description">
+                            Program pembelajaran yang berfokus pada konsep Artificial Intelligence dan Machine Learning, meliputi pengolahan data, pembuatan model AI, evaluasi model, serta penerapan AI untuk menyelesaikan berbagai permasalahan nyata.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-stagger="3">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-body">
+                        <div class="cert-year">2024</div>
+                        <h3 class="cert-name">IT Support Internship Certificate</h3>
+                        <p class="cert-institution">Lido Lake Resort by MNC</p>
+                        <p class="cert-description">
+                            Pengalaman intern sebagai IT Support yang mencakup pemeliharaan perangkat keras dan perangkat lunak, troubleshooting sistem, dukungan teknis kepada pengguna, serta pengelolaan infrastruktur teknologi informasi di lingkungan kerja.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="section" id="contact" data-reveal>
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Let's connect</p>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-desc">
+                    Saya selalu terbuka untuk berdiskusi, berkolaborasi, atau sekadar menyapa. Jangan ragu untuk menghubungi saya melalui platform berikut....
+                </p>
+            </div>
+
+            <div class="contact-cards">
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/abdul-aziz-3ba16826a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                   target="_blank" rel="noopener"
+                   class="contact-card">
+                    <div class="contact-icon contact-icon-linkedin">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-platform">LinkedIn</span>
+                        <span class="contact-handle">linkedin.com/in/abdul-aziz</span>
+                    </div>
+                    <span class="contact-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/abbdool"
+                   target="_blank" rel="noopener"
+                   class="contact-card">
+                    <div class="contact-icon contact-icon-github">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-platform">GitHub</span>
+                        <span class="contact-handle">github.com/abbdool</span>
+                    </div>
+                    <span class="contact-arrow" aria-hidden="true">→</span>
+                </a>
+
+                <!-- Gmail -->
+                <a href="abdlazz244@gmail.com"
+                   target="_blank" rel="noopener"
+                   class="contact-card">
+                    <div class="contact-icon contact-icon-gmail">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.908 1.528-1.147C21.69 2.28 24 3.434 24 5.457z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-platform">Gmail</span>
+                        <span class="contact-handle">abdlazz244@gmail.com</span>
+                    </div>
+                    <span class="contact-arrow" aria-hidden="true">→</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-name">© 2026 Abdul Aziz</p>
+            <p class="footer-role">Computer Science | Intelligent Systems</p>
+        </div>
+    </footer>
+    <script>
+        // ─── Mobile Nav Toggle ────────────────────────────────
+        const navToggle = document.getElementById('navToggle');
+        const navLinks  = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('nav-open');
+            navToggle.classList.toggle('nav-toggle-active', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close mobile nav when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-open');
+                navToggle.classList.remove('nav-toggle-active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ─── Navbar Scroll Shadow ─────────────────────────────
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        // ─── Smooth Scroll (offset for fixed navbar) ─────────
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                const navH = navbar.offsetHeight;
+                window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.pageYOffset - navH - 12,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ─── Scroll-Reveal Animations ─────────────────────────
+        // Mark all sections for reveal
+        const revealSections = document.querySelectorAll('[data-reveal]');
+
+        // Mark all staggered children
+        const staggerItems = document.querySelectorAll(
+            '.skill-card, .project-card, .cert-card'
+        );
+        staggerItems.forEach(el => {
+            el.classList.add('stagger-item');
+        });
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-revealed');
+
+                    // Stagger children inside this section
+                    entry.target.querySelectorAll('.stagger-item').forEach((item, i) => {
+                        const delay = parseInt(item.dataset.stagger || i) * 80;
+                        setTimeout(() => {
+                            item.classList.add('stagger-visible');
+                        }, delay);
+                    });
+
+                    sectionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        revealSections.forEach(section => sectionObserver.observe(section));
+    </script>
+
+</body>
+</html>
