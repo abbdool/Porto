@@ -9,6 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
+    
+    <!-- FITUR BARU: Script untuk mengecek Dark Mode secara instan (Mencegah flash putih) -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -24,13 +32,21 @@
                 <li><a href="#contact"      class="nav-link">Contact</a></li>
             </ul>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- FITUR BARU: Wrapper untuk nav actions berisi Dark Mode Toggle dan Hamburger Menu -->
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon" style="display: none;">🌙</span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
+
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -72,6 +88,7 @@
         <div class="hero-bg-blob hero-bg-blob-1" aria-hidden="true"></div>
         <div class="hero-bg-blob hero-bg-blob-2" aria-hidden="true"></div>
     </section>
+
     <section class="section" id="about" data-reveal>
         <div class="container">
             <div class="section-header">
@@ -80,7 +97,6 @@
             </div>
 
             <div class="about-content">
-
                 <!-- About Text -->
                 <div class="about-text">
                     <h3 class="about-heading">CS Student at BINUS University</h3>
@@ -106,7 +122,6 @@
                 <div class="about-timeline">
                     <h3 class="timeline-heading">Educational Journey</h3>
                     <div class="timeline">
-
                         <div class="timeline-item">
                             <div class="timeline-marker">
                                 <div class="timeline-dot"></div>
@@ -137,22 +152,19 @@
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section class="section section-alt" id="skills" data-reveal>
         <div class="container">
             <div class="section-header">
                 <p class="section-label">What I work with</p>
                 <h2 class="section-title">Skills</h2>
             </div>
-
             <div class="skills-grid">
-
                 <div class="skill-card" data-stagger="0">
                     <div class="skill-card-icon">⌨️</div>
                     <h3 class="skill-card-title">Programming</h3>
@@ -163,7 +175,6 @@
                         <span class="skill-tag">C#</span>
                     </div>
                 </div>
-
                 <div class="skill-card" data-stagger="1">
                     <div class="skill-card-icon">🧠</div>
                     <h3 class="skill-card-title">AI & Intelligent Systems</h3>
@@ -173,7 +184,6 @@
                         <span class="skill-tag">Natural Language Processing</span>
                     </div>
                 </div>
-
                 <div class="skill-card" data-stagger="2">
                     <div class="skill-card-icon">🌐</div>
                     <h3 class="skill-card-title">Software & Development</h3>
@@ -182,7 +192,6 @@
                         <span class="skill-tag">Game Development</span>
                     </div>
                 </div>
-
                 <div class="skill-card" data-stagger="3">
                     <div class="skill-card-icon">🛠️</div>
                     <h3 class="skill-card-title">Tools</h3>
@@ -196,10 +205,10 @@
                         <span class="skill-tag">Unity</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section class="section" id="projects" data-reveal>
         <div class="container">
             <div class="section-header">
@@ -208,19 +217,13 @@
             </div>
 
             <div class="projects-grid">
-
                 <!-- Project 1 -->
                 <div class="project-card" data-stagger="0">
                     <div class="project-img-wrapper">
                         <div class="project-img-placeholder" style="--ph-color: #2563eb;">
                             <span class="project-img-label">AI</span>
                         </div>
-                        <img
-                            src="{{ url_for('static', filename='project1.PNG') }}"
-                            alt="Project 1"
-                            class="project-img"
-                            onerror="this.style.display='none'"
-                        >
+                        <img src="{{ url_for('static', filename='project1.PNG') }}" alt="Project 1" class="project-img" onerror="this.style.display='none'">
                     </div>
                     <div class="project-body">
                         <h3 class="project-name">Malware Detection with ML</h3>
@@ -240,17 +243,13 @@
                         <div class="project-img-placeholder" style="--ph-color: #7c3aed;">
                             <span class="project-img-label">ML</span>
                         </div>
-                        <img
-                            src="{{ url_for('static', filename='project2.PNG') }}"
-                            alt="Project 2"
-                            class="project-img"
-                            onerror="this.style.display='none'"
-                        >
+                        <img src="{{ url_for('static', filename='project2.PNG') }}" alt="Project 2" class="project-img" onerror="this.style.display='none'">
                     </div>
                     <div class="project-body">
                         <h3 class="project-name">Slang Detection with ML</h3>
                         <p class="project-desc">
                             Sistem yang mendeteksi apakah suatu kata termasuk slang atau bukan dalam Bahasa Inggris. Proyek ini dipilih karena banyaknya penggunaan slang di media sosial yang sering menjadi tantangan bagi sistem Natural Language Processing tradisional. Dengan menggabungkan beberapa dataset slang dari berbagai sumber, kami melatih model Logistic Regression untuk mengenali pola penggunaan slang dan membedakannya dari kata-kata formal, sehingga membantu meningkatkan kualitas pemrosesan teks pada data yang berasal dari platform digital dan media sosial.
+                        </p>
                         <div class="project-actions">
                             <a href="https://slangdetection-correction-with-logistic.onrender.com/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">View Prototype</a>
                             <a href="https://github.com/abbdool/SlangDetection-Correction-with-Logistic-Regression" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Source Code</a>
@@ -264,12 +263,7 @@
                         <div class="project-img-placeholder" style="--ph-color: #0891b2;">
                             <span class="project-img-label">WEB</span>
                         </div>
-                        <img
-                            src="{{ url_for('static', filename='project3.PNG') }}"
-                            alt="Project 3"
-                            class="project-img"
-                            onerror="this.style.display='none'"
-                        >
+                        <img src="{{ url_for('static', filename='project3.PNG') }}" alt="Project 3" class="project-img" onerror="this.style.display='none'">
                     </div>
                     <div class="project-body">
                         <h3 class="project-name">Text Corrector</h3>
@@ -289,12 +283,7 @@
                         <div class="project-img-placeholder" style="--ph-color: #059669;">
                             <span class="project-img-label">DATA</span>
                         </div>
-                            <img
-                            src="{{ url_for('static', filename='project4.PNG') }}"
-                            alt="Project 4"
-                            class="project-img"
-                            onerror="this.style.display='none'"
-                        >
+                        <img src="{{ url_for('static', filename='project4.PNG') }}" alt="Project 4" class="project-img" onerror="this.style.display='none'">
                     </div>
                     <div class="project-body">
                         <h3 class="project-name">Virus Slayer: Pandemic Reborn</h3>
@@ -314,12 +303,7 @@
                         <div class="project-img-placeholder" style="--ph-color: #dc2626;">
                             <span class="project-img-label">APP</span>
                         </div>
-                            <img
-                            src="{{ url_for('static', filename='project5.PNG') }}"
-                            alt="Project 5"
-                            class="project-img"
-                            onerror="this.style.display='none'"
-                        >
+                        <img src="{{ url_for('static', filename='project5.PNG') }}" alt="Project 5" class="project-img" onerror="this.style.display='none'">
                     </div>
                     <div class="project-body">
                         <h3 class="project-name">Drowsiness Detection</h3>
@@ -335,6 +319,7 @@
             </div>
         </div>
     </section>
+
     <section class="section section-alt" id="certificates" data-reveal>
         <div class="container">
             <div class="section-header">
@@ -343,7 +328,7 @@
             </div>
 
             <div class="certs-grid">
-
+                <!-- Certificate 1 -->
                 <div class="cert-card" data-stagger="0">
                     <div class="cert-icon">📜</div>
                     <div class="cert-body">
@@ -353,9 +338,14 @@
                         <p class="cert-description">
                             Pelatihan mengenai dasar-dasar Artificial Intelligence pada platform Microsoft Azure, termasuk pengenalan layanan AI, machine learning, computer vision, natural language processing, serta implementasi solusi AI berbasis cloud.
                         </p>
+                        <!-- FITUR BARU: Tombol View Certificate -->
+                        <div style="margin-top: 14px;">
+                            <a href="https://drive.google.com/file/d/1ufz4ak2OYw5D5G_IBTjl6FcmtqEDMHiA/view?usp=sharing" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Certificate 2 -->
                 <div class="cert-card" data-stagger="1">
                     <div class="cert-icon">📜</div>
                     <div class="cert-body">
@@ -365,9 +355,13 @@
                         <p class="cert-description">
                             Program pembelajaran yang mencakup pengembangan aplikasi web dari sisi frontend dan backend, termasuk dasar pemrograman, web development, database, serta praktik pengembangan aplikasi berbasis web menggunakan berbagai teknologi modern.
                         </p>
+                        <div style="margin-top: 14px;">
+                            <a href="https://drive.google.com/drive/folders/14lfxKH-1eC8Dlu5o3mq5hHm2UiIEk9M-?usp=sharing" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Certificate 3 -->
                 <div class="cert-card" data-stagger="2">
                     <div class="cert-icon">📜</div>
                     <div class="cert-body">
@@ -377,9 +371,13 @@
                         <p class="cert-description">
                             Program pembelajaran yang berfokus pada konsep Artificial Intelligence dan Machine Learning, meliputi pengolahan data, pembuatan model AI, evaluasi model, serta penerapan AI untuk menyelesaikan berbagai permasalahan nyata.
                         </p>
+                        <div style="margin-top: 14px;">
+                            <a href="https://drive.google.com/drive/folders/1BlCTpxJeHHh7eALUwog_oTTmwCmCsoz7?usp=sharing" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Certificate 4 -->
                 <div class="cert-card" data-stagger="3">
                     <div class="cert-icon">📜</div>
                     <div class="cert-body">
@@ -389,12 +387,15 @@
                         <p class="cert-description">
                             Pengalaman intern sebagai IT Support yang mencakup pemeliharaan perangkat keras dan perangkat lunak, troubleshooting sistem, dukungan teknis kepada pengguna, serta pengelolaan infrastruktur teknologi informasi di lingkungan kerja.
                         </p>
+                        <div style="margin-top: 14px;">
+                            <a href="https://drive.google.com/file/d/1fnvHAr--4qeAAotywqRxbGcg_4dv77Rn/view?usp=sharing" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section class="section" id="contact" data-reveal>
         <div class="container">
             <div class="section-header">
@@ -406,7 +407,6 @@
             </div>
 
             <div class="contact-cards">
-
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/abdul-aziz-3ba16826a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                    target="_blank" rel="noopener"
@@ -440,7 +440,7 @@
                 </a>
 
                 <!-- Gmail -->
-                <a href="abdlazz244@gmail.com"
+                <a href="mailto:abdlazz244@gmail.com"
                    target="_blank" rel="noopener"
                    class="contact-card">
                     <div class="contact-icon contact-icon-gmail">
@@ -454,18 +454,19 @@
                     </div>
                     <span class="contact-arrow" aria-hidden="true">→</span>
                 </a>
-
             </div>
         </div>
     </section>
+
     <footer class="footer">
         <div class="container">
             <p class="footer-name">© 2026 Abdul Aziz</p>
             <p class="footer-role">Computer Science | Intelligent Systems</p>
         </div>
     </footer>
+
     <script>
-        // ─── Mobile Nav Toggle ────────────────────────────────
+        // Mobile Nav Toggle
         const navToggle = document.getElementById('navToggle');
         const navLinks  = document.getElementById('navLinks');
 
@@ -484,34 +485,59 @@
             });
         });
 
-        // ─── Navbar Scroll Shadow ─────────────────────────────
+        //Navbar Scroll Shadow
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('navbar-scrolled', window.scrollY > 20);
         }, { passive: true });
 
-        // ─── Smooth Scroll (offset for fixed navbar) ─────────
+        // Smooth Scroll (offset for fixed navbar & Snap)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (!target) return;
                 e.preventDefault();
                 const navH = navbar.offsetHeight;
+                // Offset dihilangkan '- 12' agar selaras secara sempurna dengan scroll-snap CSS
                 window.scrollTo({
-                    top: target.getBoundingClientRect().top + window.pageYOffset - navH - 12,
+                    top: target.getBoundingClientRect().top + window.pageYOffset - navH,
                     behavior: 'smooth'
                 });
             });
         });
 
-        // ─── Scroll-Reveal Animations ─────────────────────────
-        // Mark all sections for reveal
-        const revealSections = document.querySelectorAll('[data-reveal]');
+        //Dark Mode Toggle Logic (FITUR BARU)
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
 
-        // Mark all staggered children
-        const staggerItems = document.querySelectorAll(
-            '.skill-card, .project-card, .cert-card'
-        );
+        function updateThemeIcon() {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline';
+            } else {
+                sunIcon.style.display = 'inline';
+                moonIcon.style.display = 'none';
+            }
+        }
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcon();
+        });
+
+        // Scroll-Reveal Animations
+        const revealSections = document.querySelectorAll('[data-reveal]');
+        const staggerItems = document.querySelectorAll('.skill-card, .project-card, .cert-card');
+        
         staggerItems.forEach(el => {
             el.classList.add('stagger-item');
         });
@@ -520,22 +546,46 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('section-revealed');
-
-                    // Stagger children inside this section
                     entry.target.querySelectorAll('.stagger-item').forEach((item, i) => {
                         const delay = parseInt(item.dataset.stagger || i) * 80;
                         setTimeout(() => {
                             item.classList.add('stagger-visible');
                         }, delay);
                     });
-
                     sectionObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.08 });
-
+        
         revealSections.forEach(section => sectionObserver.observe(section));
-    </script>
+        // ─── Active Navbar Link on Scroll ─────────────────────
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
 
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Jika sebuah section masuk ke viewport minimal 50%
+                if (entry.isIntersecting) {
+                    const currentId = entry.target.getAttribute('id');
+                    
+                    // Hapus class active dari semua link
+                    navItems.forEach(link => {
+                        link.classList.remove('active');
+                        // Tambahkan class active ke link yang href-nya cocok dengan id section
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5 // Memicu perubahan saat 50% area section terlihat di layar
+        });
+
+        // Pantau semua section yang ada di halaman
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+    </script>
 </body>
 </html>
